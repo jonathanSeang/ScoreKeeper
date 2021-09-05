@@ -1,0 +1,32 @@
+body {
+    border: 2mm ridge blue;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#score {
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+
+#instructions { 
+    display: flex;
+    justify-content: center;
+}
+
+#scoreSelContainer {
+    border: 2mm ridge orange;
+    display: flex;
+    justify-content: center;
+}
+
+#btnsContainer {
+    border: 2mm ridge red;
+    display: flex;
+    justify-content: center;
+}
+

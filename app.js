@@ -1,4 +1,6 @@
 const score = document.querySelector("#score");
+const p1ScoreSpan = document.querySelector("#p1Score");
+const p2ScoreSpan = document.querySelector("#p2Score");
 const scoreLimit = document.querySelector('#scoreLimit');
 const p1AddBtn = document.querySelector('#p1');
 const p2AddBtn = document.querySelector('#p2');
@@ -8,19 +10,20 @@ let p1Score = 0;
 let p2Score = 0;
 
 p1AddBtn.addEventListener('click', () => {
-    score.innerHTML = (`${++p1Score} to ${p2Score}`);
+    p1ScoreSpan.innerHTML = (`${++p1Score}`);
     checkForWinner();
 });
 
 p2AddBtn.addEventListener('click', () => {
-    score.innerHTML = (`${p1Score} to ${++p2Score}`);
+    p2ScoreSpan.innerHTML = (`${++p2Score}`);
     checkForWinner();
 })
 
 resetBtn.addEventListener('click', () => {
     p1Score = 0;
     p2Score = 0;
-    score.innerHTML = (`${p1Score} to ${p2Score}`);
+    p1ScoreSpan.innerHTML = (`${p1Score}`);
+    p2ScoreSpan.innerHTML = (`${p2Score}`);
     disableButtons(false);
 });
 
@@ -28,6 +31,7 @@ function checkForWinner() {
 
     if(p1Score >= scoreLimit.value) {
         alert('P1 Wins');
+        p1ScoreSpan.style.color = rgb(0, 0, 0);
         disableButtons(true);
     }
 
